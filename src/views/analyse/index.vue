@@ -32,14 +32,10 @@
             <div class="content">
               <a-statistic :value="12000" :value-from="0" :start="true" animation show-group-separator></a-statistic>
               <section class="tip">
-                <a-progress
-                  :percent="percent"
-                  animation
-                  :color="{
-                    '0%': 'rgb(var(--success-2))',
-                    '100%': 'rgb(var(--success-5))'
-                  }"
-                />
+                <a-progress :percent="percent" animation :color="{
+        '0%': 'rgb(var(--success-2))',
+        '100%': 'rgb(var(--success-5))'
+      }" />
               </section>
             </div>
             <a-divider :margin="16"></a-divider>
@@ -101,17 +97,8 @@
       </a-row>
 
       <a-row :gutter="14" class="gi_mt">
-        <a-col
-          v-for="(item, index) in list"
-          :key="item.name"
-          :class="'animated-fade-up-' + index"
-          :xs="12"
-          :sm="8"
-          :md="4"
-          :lg="4"
-          :xl="3"
-          :xxl="3"
-        >
+        <a-col v-for="(item, index) in list" :key="item.name" :class="'animated-fade-up-' + index" :xs="12" :sm="8"
+          :md="4" :lg="4" :xl="3" :xxl="3">
           <a-card hoverable :bordered="false" class="mini-card">
             <a-row justify="center" align="center" style="flex-direction: column">
               <GiSvgIcon :name="item.icon" :size="30" color="rgb(var(--primary-3))"></GiSvgIcon>
@@ -164,33 +151,40 @@ setTimeout(() => {
   .card {
     display: flex;
     flex-direction: column;
+
     :deep(.arco-card-body) {
       flex: 1;
       display: flex;
       flex-direction: column;
     }
+
     :deep(.arco-tag-size-medium) {
       width: 24px;
       padding: 0;
       justify-content: center;
     }
+
     .content {
       flex: 1;
     }
+
     .tip {
       height: 30px;
       display: flex;
       align-items: center;
     }
   }
+
   .mini-card {
     transition: transform 0.3s;
     margin-bottom: $margin;
+
     &:hover {
       transform: translateY(-4px);
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       cursor: pointer;
     }
+
     span {
       margin-top: 8px;
     }

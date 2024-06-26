@@ -1,9 +1,16 @@
 export interface UserInfo {
+  user:user
+  token: string
+}
+
+export interface user{
   id: string
-  nickname: string
-  avatar: string
+  name: string
+  headUrl: string
   roles: string[]
-  permissions: string[]
+  balance: number
+  isClerk: number
+  openId:string
 }
 
 export interface LoginRes {

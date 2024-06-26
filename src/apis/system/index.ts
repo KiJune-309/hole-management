@@ -125,3 +125,8 @@ export function deleteSystemDictData(params: { ids: string[]; code: string }) {
 export function saveSystemDictData(data: any) {
   return http.post<boolean>(`${prefix}/system/dict/dataSave`, data)
 }
+
+
+export function setRoute(params: any) {
+  return http.post(`${prefix}/menus/add`, params)
+}

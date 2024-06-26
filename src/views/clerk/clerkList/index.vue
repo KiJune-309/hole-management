@@ -2,24 +2,15 @@
   <div class="table-page">
     <GiForm :options="options" v-model="form" @search="search"></GiForm>
     <div class="gi_table_box">
-      <a-table
-          row-key="id"
-          size="small"
-          page-position="bottom"
-          :bordered="{ cell: true }"
-          :loading="loading"
-          :data="tableData"
-          :scroll="{ x: '100%', y: '100%', minWidth: 1000 }"
-          :pagination="pagination"
-      >
+      <a-table row-key="id" size="small" page-position="bottom" :bordered="{ cell: true }" :loading="loading"
+        :data="tableData" :scroll="{ x: '100%', y: '100%', minWidth: 1000 }" :pagination="pagination">
         <template #columns>
           <a-table-column title="序号" :width="66" align="center">
             <template #cell="cell">{{ cell.rowIndex + 1 }}</template>
           </a-table-column>
           <a-table-column title="姓名" data-index="clerkName" :width="120"></a-table-column>
-          <a-table-column title="性别" #cell={record}>
-            {{record.sex?"男":"女"}}
-          </a-table-column>
+          <a-table-column title="性别" #cell="{ record }">
+            {{ record.sex ? " 男" : "女" }} </a-table-column>
           <a-table-column title="手机号" data-index="phone" :width="150"></a-table-column>
           <a-table-column title="微信号" data-index="wxNumber" ellipsis tooltip></a-table-column>
           <a-table-column title="等级" data-index="level" ellipsis tooltip></a-table-column>
@@ -36,10 +27,9 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { usePagination } from '@/hooks'
-import {getClerkApplyList} from '@/apis'
-import type { Options } from '@/components/GiForm'
+import { getClerkApplyList } from '@/apis'
 import router from "@/router";
 
 defineOptions({ name: 'TableBase' })
@@ -47,7 +37,7 @@ defineOptions({ name: 'TableBase' })
 const form = reactive({})
 
 const col = { xs: 24, sm: 12, md: 12, lg: 8, xl: 8, xxl: 6 }
-const options: Options = reactive({
+const options = reactive({
   form: { layout: 'inline' },
   btns: { col: col },
   fold: { enable: true, index: 2 },
@@ -87,15 +77,15 @@ const options: Options = reactive({
 })
 
 const loading = ref(false)
-const tableData = ref<PersonItem[]>([])
+const tableData = ref([])
 
 const { pagination, setTotal } = usePagination(() => getTableData())
-const toDetail=(record)=>{
+const toDetail = (record) => {
   console.log("toDetail")
   router.push({
-    path:"/detail/senior",
-    query:{
-      clerkId:record.clerkId
+    path: "/detail/senior",
+    query: {
+      clerkId: record.clerkId
     }
   })
 }

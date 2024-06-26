@@ -2,21 +2,21 @@ import { defineStore } from 'pinia'
 import { ref, reactive, computed } from 'vue'
 import { resetRouter } from '@/router'
 import { login as loginApi, logout as logoutApi, getUserInfo as getUserInfoApi } from '@/apis'
-import type { UserInfo } from '@/apis'
+import type { user } from '@/apis'
 import { setToken, clearToken, getToken } from '@/utils/auth'
 import { resetHasRouteFlag } from '@/router/permission'
 
 const storeSetup = () => {
-  const userInfo = reactive<Pick<UserInfo, 'nickname' | 'avatar'>>({
-    nickname: '',
-    avatar: ''
+  const userInfo = reactive<Pick<user, 'name' | 'headUrl'>>({
+    name: '',
+    headUrl: ''
   })
-  const name = computed(() => userInfo.nickname)
-  const avatar = computed(() => userInfo.avatar)
+  const name = computed(() => userInfo.name)
+  const avatar = computed(() => userInfo.headUrl)
 
   const token = ref(getToken() || '')
   const roles = ref<string[]>([]) // 当前用户角色
-  const permissions = ref<string[]>([]) // 当前角色权限标识集合
+  // const permissions = ref<string[]>([]) // 当前角色权限标识集合
 
   // 重置token
   const resetToken = () => {
@@ -38,7 +38,7 @@ const storeSetup = () => {
       await logoutApi()
       token.value = ''
       roles.value = []
-      permissions.value = []
+      // permissions.value = []
       resetToken()
       resetRouter()
       return true
@@ -50,11 +50,12 @@ const storeSetup = () => {
   // 获取用户信息
   const getInfo = async () => {
     const res = await getUserInfoApi()
-    userInfo.nickname = res.data.nickname
-    userInfo.avatar = res.data.avatar
-    if (res.data.roles && res.data.roles.length) {
-      roles.value = res.data.roles
-      permissions.value = res.data.permissions
+    const data = res.data.user;
+    userInfo.name = data?.name
+    userInfo.headUrl = data.headUrl
+    if (data.roles && data.roles.length) {
+      roles.value = data.roles
+      // permissions.value = res.data.permissions
     }
   }
 
@@ -64,9 +65,9 @@ const storeSetup = () => {
     setToken(token.value)
   }
 
-  return { userInfo, name, avatar, token, roles, permissions, login, logout, getInfo, resetToken, editToken }
+  return { userInfo, name, avatar, token, roles, login, logout, getInfo, resetToken, editToken }
 }
 
 export const useUserStore = defineStore('user', storeSetup, {
-  persist: { paths: ['token', 'roles', 'permissions'], storage: localStorage }
+  persist: { paths: ['token', 'roles'], storage: localStorage }
 })

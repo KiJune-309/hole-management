@@ -15,10 +15,10 @@ export function logout() {
 
 /** @desc 获取用户信息 */
 export const getUserInfo = () => {
-  return http.get<User.UserInfo>(`${Temp_interface}${prefix}/api/getUserInfo`)
+  return http.get<User.UserInfo>(`${prefix}/api/getUserInfo`)
 }
 
 /** @desc 获取用户路由信息 */
 export const getUserAsyncRoutes = () => {
-  return http.get<MenuItem[]>(`${Temp_interface}${prefix}/api/routes`)
+  return http.get<MenuItem[]>(`${prefix}/menus/routes`)
 }

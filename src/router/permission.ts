@@ -25,7 +25,8 @@ router.beforeEach(async (to, from, next) => {
     } else {
       if (!hasRouteFlag) {
         try {
-          await userStore.getInfo()
+          // await userStore.getInfo();
+          const form = new FormData;
           const accessRoutes = await routeStore.generateRoutes()
           accessRoutes.forEach((route) => {
             if (!isHttp(route.path)) {
