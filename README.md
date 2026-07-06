@@ -1,103 +1,3 @@
-<div align="center">
-	<img style="width: 80px;height: 80px" src="https://gitee.com/lin0716/gi-image/raw/master/md-logo.gif"/>
-	<h1>Gi Admin Pro</h1>
-</div>
-
-[![license](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
-
-## 简介
-
-Gi Admin Pro 是一个基于 Vue3、Vite、TypeScript、Arco Design Vue、Pinia、VueUse 等的免费中后台模版，它使用了最新的前端技术栈，内置丰富的主题配置，有着极高的代码规范，基于 mock 实现的动态数据展示，开箱即用的模板，也可用于学习参考。
-
-> **Gi 前缀含义：** G：代表全局 i：代表我的
->
-> Gi 用来定义全局组件前缀，如 GiNavBar、GiTitle、GiLoading
-
-## 特性
-
-- **最新技术栈**：使用 Vue3 / Vite 等前端前沿技术开发，使用高效率的 npm 包管理器
-- **TypeScript**: 应用程序级 JavaScript 的语言
-- **主题**：丰富可配置的主题、暗黑模式
-- **代码规范**：丰富的规范插件及极高的代码规范
-
-## 预览
-
-<a href="http://lin0716.gitee.io/gi-demo" target="_blank">Gi Admin Pro 预览地址</a>
-
-账号1：**admin**   密码：**123456**
-账号2：**user**  密码：**123456**
-
-## 代码仓库
-
-<a href="https://gitee.com/lin0716/gi-demo" target="_blank">Gitee  仓库地址</a>
-
-## 项目示例图
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-demo1.jpg" />
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-demo2.jpg" />
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-demo3.jpg" />
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-demo4.jpg" />
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-demo5.jpg" />
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-demo6.jpg" />
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-demo7.jpg" />
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-demo8.jpg" />
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-demo9.jpg" />
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-demo10.jpg" />
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-demo11.jpg" />
-
-## 安装使用
-
-- 安装依赖
-
-```bash
-npm install
-```
-
-- 运行
-
-```bash
-npm run dev
-```
-
-- 打包
-
-```bash
-npm run build
-```
-
-## vs code 插件安装
-
-```bash
-1. Prettier - Code formatter
-2. Vue Language Features (Volar)
-3. Vue 3 Snippets
-4. TypeScript Vue Plugin (Volar)
-```
-
-## 注意
-
-```bash
-由于升级了vite3，根据官方规定，node版本必须是14.18.0以上
-```
-
-**`注：现在已更新到了 Vite4.x，node的版本要求请参考官网要求`**
-
-**vite 官网地址：** https://cn.vitejs.dev/
-
-## 开源作者
-
-**Lin**
-
 ## 项目规范
 
 #### .vue 文件行数规范
@@ -730,9 +630,9 @@ const onEdit = (item: PersonItem) => {
 
 
 
-#### GiForm使用文档
+#### Form使用文档
 
-GiForm是一个JSON配置表单组件，能够快速通过JSON构建表单布局
+Form是一个JSON配置表单组件，能够快速通过JSON构建表单布局
 
 | props   | 说明       |
 | ------- | ---------- |
@@ -798,19 +698,10 @@ export interface Options {
 }
 ~~~
 
-基本示例
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/GiFormDemo.png" />
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/form1.png" />
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/form2.png" />
-
 
 
 #### Hooks 目录结构
 
-<img src="https://gitee.com/lin0716/gi-image/raw/master/hooks-catalog.png" />
 
 **hooks 下默认存放公共的，非接口请求的 hooks**
 
@@ -1598,12 +1489,6 @@ $padding: 16px; // 盒子和内容的间距
 
 <a href="https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank">阮一峰 flex 布局</a>
 
-## 开源项目集合
-
-<a href="https://vue-admin.cn/admin" target="_blank">Vue3 开源项目集合</a>
-
-<a href="https://react-admin.cn/admin/" target="_blank">React 开源项目集合</a>
-
 ## 工具
 
 <a href="https://c.runoob.com/" target="_blank">菜鸟工具</a>
@@ -1615,11 +1500,3 @@ $padding: 16px; // 盒子和内容的间距
 <a href="http://49.234.61.19/tool/cssTriangle" target="_blank">在线三角形样式生成器</a>
 
 <a href="https://go.itab.link/" target="_blank">iTab</a>
-
-
-
-## 捐赠
-
-
-
-<img style="width:300px" src="https://gitee.com/lin0716/gi-image/raw/master/alipay.jpg" />
