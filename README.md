@@ -1022,72 +1022,6 @@ const getTableData = async () => {
 
 
 
-#### useTable(hooks) 的使用
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/useTable.png" />
-
-使用
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/useTableDemo.png" />
-
-**提示**
-
-使用useTable的时候不传入类型，tableData也会根据入参自动推导出类型
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/useTableDemo2.png" />
-
-
-
-#### TSX 方式调起弹窗
-
-##### 方式 1
-
-tool.tsx
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-tsx-modal2.png" />
-
-使用
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-tsx-modal-use.png" />
-
-
-
-##### 方式 2
-
-AddUserForm.vue
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-tsx-modal1.png" />
-
-使用
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-tsx-modal-use.png" />
-
-##### 方式 3
-
-`@/views/file/components/FileRenameModal/index.vue`
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-tsx-modal3-1.png" />
-
-`@/views/file/components/index.ts`
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-tsx-modal3-2.png" />
-
-使用
-
-```vue
-<script setup lang="ts">
-import { openFileRenameModal } from '../../components/index'
-import type { FileItem } from '@/apis'
-
-// 重命名 函数调用表单弹窗组件
-const rename = (item: FileItem) => {
-  openFileRenameModal(item)
-}
-</script>
-```
-
-
-
 #### 组件使用建议
 
 能使用组件尽量使用组件实现页面布局
@@ -1320,8 +1254,6 @@ $padding: 16px; // 盒子和内容的间距
 位置 2：使用 $padding 全局 scss 变量
 
 建议尽量使用全局 scss 变量来开发，可以有效提高效率和团队协作
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-gap.png" />
 
 #### CSS 的命名词汇
 
