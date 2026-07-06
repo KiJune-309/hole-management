@@ -752,10 +752,6 @@ getDeptList() // 建议在页面调用 hooks 的方法，比较直观（不在ho
 </script>
 ```
 
-#### TSX 方式使用表格
-
-<img src="https://gitee.com/lin0716/gi-image/raw/master/md-tsx-table.png" />
-
 
 
 #### usePagination(hooks) 的使用
